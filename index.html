@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>राम शलाका - 9 ग्रह</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 300px;
+      margin: 20px auto;
+    }
+
+    .grid-container button {
+      padding: 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .grid-container button:hover {
+      background-color: #45a049;
+    }
+
+    .chaupai {
+      font-size: 20px;
+      color: #333;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    .meaning {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>राम शलाका - 9 ग्रह</h1>
+
+  <div class="grid-container">
+    <button onclick="showChaupai(1)">सूर्य</button>
+    <button onclick="showChaupai(2)">चंद्र</button>
+    <button onclick="showChaupai(3)">गुरु</button>
+    <button onclick="showChaupai(4)">राहु</button>
+    <button onclick="showChaupai(5)">बुध</button>
+    <button onclick="showChaupai(6)">शुक्र</button>
+    <button onclick="showChaupai(7)">केतु</button>
+    <button onclick="showChaupai(8)">शनि</button>
+    <button onclick="showChaupai(9)">मंगल</button>
+  </div>
+
+  <div id="chaupai" class="chaupai"></div>
+  <div id="meaning" class="meaning"></div>
+
+  <script>
+    const chaupais = [
+      "सुनु सिय सत्य असीस हमारी। पूजिहि मन कामना तुम्हारी॥", // सूर्य
+      "प्रबिसि नगर कीजै सब काजा। हृदय राखि कोसलपुर राजा॥", // चंद्र
+      "उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥", // गुरु
+      "बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥", // राहु
+      "होइ है सोई जो राम रचि राखा। को करि तर्क बढ़ावहिं साषा॥", // बुध
+      "मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥", // शुक्र
+      "गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥", // केतु
+      "बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥", // शनि
+      "सुफल मनोरथ होहुँ तुम्हारे। राम लखनु सुनि भए सुखारे॥" // मंगल
+    ];
+
+    const meanings = [
+      "हे सीता, सुनो! यह मेरी सच्ची आशीर्वाद है कि तुम्हारी सभी मनोकामनाएं पूरी होंगी।", // सूर्य
+      "कोसलपुर के राजा श्री राम को अपने हृदय में रखते हुए नगर में प्रवेश करो और अपने सभी कार्य सफलतापूर्वक संपन्न करो।", // चंद्र
+      "जो लोग संसार में दुष्ट हैं, जैसे कालनेमि और रावण, उनका अंत निश्चित होता है।", // गुरु
+      "जो व्यक्ति बुरी संगति में रहते हुए भी अपने गुणों का पालन करता है, वह अपनी स्थिति सुधार सकता है।", // राहु
+      "जो कुछ भी होता है, वह भगवान राम की इच्छा और उनकी योजना के अनुसार होता है।", // बुध
+      "संतों का समाज सदा आनंद और कल्याणकारी होता है, जैसे प्रत्येक जीवित (जंगम) और निर्जीव (स्थावर) तीर्थ स्थल का राजा होता है।", // शुक्र
+      "भगवान की महिमा के प्रभाव से विष अमृत में बदल सकता है, शत्रु मित्र बन सकते हैं, गोजर (गाय का खुर) के बराबर पानी महासागर बन सकता है, और आग ठंडी हो सकती है।", // केतु
+      "वरुण, कुबेर, इन्द्र और पवनदेव जैसे देवता भी युद्ध में सामने होते हुए धैर्य नहीं खोते। यह उनकी वीरता और साहस को दर्शाता है।", // शनि
+      "आपके सभी मनोरथ (इच्छाएं) सफल हों। राम और लक्ष्मण का नाम सुनते ही भय समाप्त हो जाता है।" // मंगल
+    ];
+
+    function showChaupai(number) {
+      document.getElementById("chaupai").innerText = `चौपाई: ${chaupais[number - 1]}`;
+      document.getElementById("meaning").innerText = `अर्थ: ${meanings[number - 1]}`;
+    }
+  </script>
+
+</body>
+</html>
